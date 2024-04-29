@@ -1,6 +1,11 @@
 {% set name = "tb-profiler" %}
+<<<<<<< HEAD
 {% set version = "6.2.0" %}
 {% set sha256 = "23880e0a38541629f5d2b66fd5323dc9df07fb357e359ad3dc640e4c5b77a206" %}
+=======
+{% set version = "6.0.0" %}
+{% set sha256 = "a23600831f0e14d604e3a3a9330e61b852a559a539876c49b294ab31c8e8cbcf" %}
+>>>>>>> 727d1646b1 (Update tb-profiler to 6.0.0 (#46507))
 
 package:
   name: {{name}}
@@ -28,7 +33,11 @@ requirements:
     - python >=3.8
     - git
     - jinja2
+<<<<<<< HEAD
     - pathogen-profiler =4.1.0
+=======
+    - pathogen-profiler >=4.0.0
+>>>>>>> 727d1646b1 (Update tb-profiler to 6.0.0 (#46507))
     - filelock
     - docxtpl
     - iqtree
