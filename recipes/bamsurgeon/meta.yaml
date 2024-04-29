@@ -1,13 +1,13 @@
 {% set name = "Bamsurgeon" %}
-{% set version = "test1" %}
+{% set version = "1.4.1" %}
 
 package:
   name: '{{ name|lower }}'
   version: '{{ version }}'
 
 source:
-  url: https://github.com/Tim15-tech/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  # sha256: 757894ff87944f634b9193c1479dcb1ebe704ee99f1119507fe0a0960932c9f9
+  url: https://github.com/adamewing/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 137981f16df21fe5b4f602c641372a20643a8bb92e6c6dddace499427417213f
 
 build:
   run_exports:
@@ -26,13 +26,15 @@ requirements:
     - bwa >=0.7.12
     - exonerate >=2.2
     - velvet >=1.2
+    - wgsim >=0.2
     - pysam
     - picard
 
 test:
   commands:
-    - addsv.py -p 1 -v test_data/test_sv.txt -f test_data/testregion_realign.bam -r test_data/Homo_sapiens_chr22_assembly19.fasta -o test_data/testregion_sv_mut.bam --aligner mem --keepsecondary --seed 1234 --inslib test_data/test_inslib.fa
-    # test included in run_test.sh as find is not working and change of folder via cd not possibe in run_test.sh generated with this test here
+    - addsv.py -h
+    - addsnv.py -h
+    - addindel.py -h
 about:
   home: https://github.com/adamewing/bamsurgeon
   license: MIT-license
